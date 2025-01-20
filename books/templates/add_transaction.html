@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Transaction</title>
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/ananda-black');
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            padding: 20px;
+        }
+
+        .container {
+            position: relative;
+            top: 5rem;
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            color: #555;
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        label {
+            font-size: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+        }
+
+        select, input[type="date"], button {
+            padding: 8px;
+            margin: 10px 0;
+            width: 100%;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #ff1e00;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            padding: 12px;
+        }
+
+        button:hover {
+            background-color: #ac1400;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            select, input[type="date"], button {
+                font-size: 0.9rem;
+            }
+        }
+
+        h1 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            font-family: 'Ananda Black', sans-serif;
+            font-size: 2rem;
+            margin: 0;
+            padding: 1rem 2rem;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/main">
+            <h1>Kyra Books</h1>
+        </a>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <label for="member">Member:</label>
+            <select id="member" name="member" required>
+                {% for member in members %}
+                    <option value="{{ member.id }}">
+                        {{ member.name }}
+                    </option>
+                {% endfor %}
+            </select><br><br>
+
+            <label for="book">Book:</label>
+            <select id="book" name="book" required>
+                {% for book in books %}
+                    <option value="{{ book.id }}">
+                        {{ book.title }}
+                    </option>
+                {% endfor %}
+            </select><br><br>
+
+            <label for="issue_date">Issue Date:</label>
+            <input type="date" id="issue_date" name="issue_date" required><br><br>
+
+            <label for="return_date">Return Date:</label>
+            <input type="date" id="return_date" name="return_date"><br><br>
+
+            <label for="status">Status:</label>
+            <select id="status" name="status" required>
+                <option value="Issued">Issued</option>
+                <option value="Returned">Returned</option>
+                <option value="Overdue">Overdue</option>
+                <option value="Lost">Lost</option>
+            </select><br><br>
+
+            <button type="submit"></a>Save Transaction</button>
+        </form>
+    </div>
+</body>
+</html>

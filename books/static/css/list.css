@@ -1,0 +1,204 @@
+@import url('https://fonts.cdnfonts.com/css/ananda-black');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    padding: 20px;
+}
+
+.container {
+    position: relative;
+    top: 5rem;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: 'montserrat', sans-serif;
+}
+
+h2 {
+    font-size: 1.75rem;
+    color: #555;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'montserrat', sans-serif;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+thead {
+    background-color: #ff1e00;
+    color: white;
+    font-family: 'montserrat', sans-serif;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-weight: 600;
+}
+
+th {
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'montserrat', sans-serif;
+}
+
+td {
+    font-size: 0.9rem;
+    font-family: 'montserrat', sans-serif;
+   
+}
+
+button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.delete-btn {
+    color: rgb(0, 0, 0);
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-family: 'montserrat', sans-serif;
+}
+
+.delete-btn:hover {
+    background-color: #ffe7e6;
+}
+
+.update-btn {
+    color: rgb(22, 0, 0);
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-family: 'montserrat', sans-serif;
+}
+
+.update-btn:hover {
+    background-color: #c7e0cd;
+}
+
+.fas {
+    margin-right: 5px;
+}
+
+.add-book-btn {
+    font-family: 'montserrat', sans-serif;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff1e00;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.add-book-btn:hover {
+    background-color: #ac1400;
+}
+
+input[type="text"], input[type="number"], select {
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    table {
+        font-size: 0.85rem;
+    }
+
+    button {
+        font-size: 0.8rem;
+    }
+
+    .add-book-btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    input[type="text"], input[type="number"], select {
+        font-size: 0.85rem;
+    }
+}
+
+h1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-family: 'Ananda Black', sans-serif;
+    font-size: 2rem;
+    margin: 0;
+    padding: 1rem 2rem;
+    z-index: 1000;
+}
+
+.featured-row {
+    background-color: #ffe680;
+    font-weight: bold;
+}
+
+.feature-btn i{
+    color: #000;
+    border: none;
+  
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+  
+}
+
+
+
+
+.highlighted {
+    background-color: #ffeb99;
+}
+
+
+
+.lost-btn i {
+    color: #000;
+   
+    background-color: none;
+    padding: 8px 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+

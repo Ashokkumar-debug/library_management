@@ -1,0 +1,114 @@
+@import url('https://fonts.cdnfonts.com/css/ananda-black');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 1, 1, 0.4); 
+    width: 70%;
+    max-width: 900px; 
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-template-rows: auto auto auto; 
+    grid-gap: 20px; 
+    grid-template-areas: 
+        "field1 field2 field3 field4"
+        "field5 field6 field7 field8"
+        "button button button button"; 
+    font-family: 'montserrat', sans-serif;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+    font-family: 'montserrat', sans-serif;
+}
+
+input[type="text"], 
+input[type="number"],
+select {
+    width: 100%;
+    padding: 8px; 
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: all 0.3s ease; 
+    font-family: 'montserrat', sans-serif;
+}
+
+input[type="text"]:focus, 
+input[type="number"]:focus,
+select:focus {
+    border-color: #ff9d00; 
+    box-shadow: 0 0 5px rgba(255, 157, 0, 0.5); 
+    transform: scale(1.05); 
+    font-family: 'montserrat', sans-serif;
+}
+
+button {
+    position: relative;
+    left: 14rem;
+    width: 50%;
+    padding: 13px; 
+    background-color: #ff9d00;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px; 
+    cursor: pointer;
+    box-sizing: border-box;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    grid-column: span 4; 
+    font-family: 'montserrat', sans-serif;
+}
+
+button:hover {
+    background-color: #b39b00;
+    transform: scale(1.05); 
+}
+
+button:active {
+    transform: scale(0.98); 
+}
+
+form > label:nth-child(-n+4),
+form > input:nth-child(-n+4),
+form > select:nth-child(-n+4) {
+    grid-column: span 1; 
+}
+
+form > label:nth-child(n+5):nth-child(-n+7),
+form > input:nth-child(n+5):nth-child(-n+7),
+form > select:nth-child(n+5):nth-child(-n+7) {
+    grid-column: span 1; 
+}
+
+h1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-family: 'Ananda Black', sans-serif;
+    font-size: 2rem;
+    margin: 0;
+    padding: 1rem 2rem;
+    z-index: 1000;
+}

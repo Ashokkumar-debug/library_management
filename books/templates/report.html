@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overdue Members</title>
+    {% load static %}
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/ananda-black');
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            padding: 20px;
+        }
+        
+        .container {
+            position: relative;
+            top: 5rem;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+            font-family: 'montserrat', sans-serif;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        thead {
+            background-color: #ff1e00;
+            color: white;
+            font-family: 'montserrat', sans-serif;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            font-family: 'montserrat', sans-serif;
+            font-weight: 500;
+        }
+        
+        th {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        td {
+            font-size: 0.9rem;
+        }
+        
+        h1 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            font-family: 'Ananda Black', sans-serif;
+            font-size: 2rem;
+            margin: 0;
+            padding: 1rem 2rem;
+            z-index: 1000;
+        }
+        h3{
+            font-size: x-large;
+            font-family: 'montserrat', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/main">
+            <h1>Kyra Books</h1>
+        </a>
+        {% if overdue_members %}
+            <table>
+                <h3>Overdue Members</h3>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
+                        <th>Fine</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for member in overdue_members %}
+                        <tr>
+                            <td>{{ member.name }}</td>
+                            <td>{{ member.email }}</td>
+                            <td>{{ member.phone_number }}</td>
+                            <td>${{ member.fine_amount }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No overdue members found.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

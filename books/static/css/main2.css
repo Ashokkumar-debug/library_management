@@ -1,0 +1,73 @@
+@import url('https://fonts.cdnfonts.com/css/ananda-black');
+@import url('https://fonts.cdnfonts.com/css/tt-octosquares-trl');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+.card-container {
+    position: relative;
+    left: 20rem;
+    top: 10rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.card {
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-books {
+    color: rgb(34, 32, 32);
+}
+
+.card-members {
+    color: rgb(0, 0, 0);
+}
+
+.card-transactions {
+    color: rgb(36, 33, 33);
+}
+
+.card-staff {
+    color: rgb(20, 16, 16);
+}
+
+.card img {
+    width: 60%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card p {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(22, 21, 21);
+    font-family: 'montserrat', sans-serif;
+}
+
+h1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-family: 'Ananda Black', sans-serif;
+    font-size: 2rem;
+    margin: 0;
+    background-color: white;
+    padding: 1rem 2rem;
+    z-index: 1000;
+}

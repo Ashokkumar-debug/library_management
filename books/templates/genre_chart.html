@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genre Popularity Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/ananda-black');
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+        html, body {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f1f3f5;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 200%;
+            max-width: 800px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+            color: #343a40;
+        }
+       
+h1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-family: 'Ananda Black', sans-serif;
+    font-size: 2rem;
+    margin: 0;
+
+    padding: 1rem 2rem;
+    z-index: 1000;
+}
+
+        canvas {
+            width: 100%;
+            height: 350px;
+        }
+
+        #genreChart {
+            display: block;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <a href="/main">
+        <h1>Kyra Books</h1>
+    </a>
+    <div class="container">
+        <h2>Book Genre Popularity</h2>
+
+        <div class="chart-container">
+            <canvas id="genreChart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        var ctx = document.getElementById('genreChart').getContext('2d');
+
+        var gradient1 = ctx.createLinearGradient(0, 0, 0, 400);
+        gradient1.addColorStop(0, 'rgba(42, 157, 143, 1)');
+        gradient1.addColorStop(1, 'rgba(233, 196, 106, 1)');
+
+        var gradient2 = ctx.createLinearGradient(0, 0, 0, 400);
+        gradient2.addColorStop(0, 'rgba(244, 85, 106, 1)');
+        gradient2.addColorStop(1, 'rgba(134, 192, 249, 1)');
+
+        var gradient3 = ctx.createLinearGradient(0, 0, 0, 400);
+        gradient3.addColorStop(0, 'rgba(111, 80, 255, 1)');
+        gradient3.addColorStop(1, 'rgba(253, 129, 28, 1)');
+
+        var gradient4 = ctx.createLinearGradient(0, 0, 0, 400);
+        gradient4.addColorStop(0, 'rgba(63, 94, 251, 1)');
+        gradient4.addColorStop(1, 'rgba(252, 70, 107, 1)');
+
+        var gradient5 = ctx.createLinearGradient(0, 0, 0, 400);
+        gradient5.addColorStop(0, 'rgba(93, 63, 211, 1)');
+        gradient5.addColorStop(1, 'rgba(30, 58, 138, 1)');
+
+        var genreChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: {{ genres|safe }},
+                datasets: [{
+                    label: 'Books Borrowed by Genre',
+                    data: {{ counts|safe }},
+                    backgroundColor: [
+                        gradient1,
+                        gradient2,
+                        gradient3,
+                        gradient4,
+                        gradient5,
+                        gradient1,
+                        gradient2,
+                        gradient3,
+                        gradient4,
+                        gradient5
+                    ],
+                    borderColor: [
+                        'rgba(42, 157, 143, 1)',
+                        'rgba(233, 196, 106, 1)',
+                        'rgba(244, 85, 106, 1)',
+                        'rgba(134, 192, 249, 1)',
+                        'rgba(111, 80, 255, 1)',
+                        'rgba(253, 129, 28, 1)',
+                        'rgba(63, 94, 251, 1)',
+                        'rgba(252, 70, 107, 1)',
+                        'rgba(93, 63, 211, 1)',
+                        'rgba(30, 58, 138, 1)',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return tooltipItem.label + ': ' + tooltipItem.raw + ' books';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

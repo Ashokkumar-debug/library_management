@@ -1,0 +1,278 @@
+@import url('https://fonts.cdnfonts.com/css/ananda-black');
+@import url('https://fonts.cdnfonts.com/css/tt-octosquares-trl');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+.card-container {
+    position: relative;
+    top: 10rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.card {
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-books {
+    color: rgb(34, 32, 32);
+}
+
+.card-members {
+    color: rgb(0, 0, 0);
+}
+
+.card-transactions {
+    color: rgb(36, 33, 33);
+}
+
+.card-staff {
+    color: rgb(20, 16, 16);
+}
+
+.card img {
+    width: 60%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card p {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(22, 21, 21);
+    font-family: 'montserrat',sans-serif;
+}
+
+h1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-family: 'Ananda Black', sans-serif;
+    font-size: 2rem;
+    margin: 0;
+    background-color: white;
+    padding: 1rem 2rem;
+    z-index: 1000;
+}
+
+.U1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 13rem;
+}
+
+.U2 {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    width: 250px;
+    padding: 10px;
+    text-align: center;
+    background: linear-gradient(to bottom right, #d8f0e2, #00ffaa);
+}
+
+.U3 h3 {
+    font-size: 1.5em;
+    color: #010305;
+    margin: 0;
+    padding: 10px 0;
+    font-family: 'montserrat',sans-serif;
+    position: relative;
+    right: 3rem;
+}
+
+.U3 h2 {
+    font-size: 1.5em;
+    color: #000000;
+    margin: 0;
+    padding: 10px 0;
+    font-family: 'montserrat',sans-serif;
+    position: relative;
+    right: 5.5rem;
+    top: 11px;
+    font-size: 40px;
+}
+
+@media (max-width: 600px) {
+    .U2 {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .U3 h3 {
+        font-size: 1.3em;
+    }
+}
+
+.V1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 13rem;
+}
+
+.V2 {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    width: 250px;
+    padding: 10px;
+    text-align: center;
+    background: linear-gradient(to bottom right, #d8f0e2, #fffb19);
+}
+
+.V3 h3 {
+    font-size: 1.5em;
+    color: #010305;
+    margin: 0;
+    padding: 10px 0;
+    font-family: 'montserrat',sans-serif;
+    position: relative;
+    right: 3rem;
+}
+
+.V3 h2 {
+    font-size: 1.5em;
+    color: #000000;
+    margin: 0;
+    padding: 10px 0;
+    font-family: 'montserrat',sans-serif;
+    position: relative;
+    right: 5.5rem;
+    top: 11px;
+    font-size: 40px;
+}
+
+@media (max-width: 600px) {
+    .V2 {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .V3 h3 {
+        font-size: 1.3em;
+    }
+}
+
+.W1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 13rem;
+}
+
+.W2 {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    width: 250px;
+    padding: 10px;
+    text-align: center;
+    background: linear-gradient(to bottom right, #d8f0e2, #ff0808);
+}
+
+.W3 h3 {
+    font-size: 1.5em;
+    color: #010305;
+    margin: 0;
+    padding: 10px 0;
+    font-family: 'montserrat',sans-serif;
+    position: relative;
+    right: 2rem;
+}
+
+.W3 h2 {
+    font-size: 1.5em;
+    color: #000000;
+    margin: 0;
+    padding: 10px 0;
+    font-family: 'montserrat',sans-serif;
+    position: relative;
+    right: 3.5rem;
+    top: 11px;
+    font-size: 40px;
+}
+
+@media (max-width: 600px) {
+    .W2 {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .W3 h3 {
+        font-size: 1.3em;
+    }
+}
+
+.X1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 13rem;
+}
+
+.X2 {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    width: 250px;
+    padding: 10px;
+    text-align: center;
+    background: linear-gradient(to bottom right, #d8f0e2, #fd7a00);
+}
+
+.X3 h3 {
+    font-size: 1.5em;
+    color: #010305;
+    margin: 0;
+    padding: 10px 0;
+    font-family: 'montserrat',sans-serif;
+    position: relative;
+    right: 4.5rem;
+}
+
+.X3 h2 {
+    font-size: 1.5em;
+    color: #000000;
+    margin: 0;
+    padding: 10px 0;
+    font-family: 'montserrat',sans-serif;
+    top: 9px;
+    font-size: 40px;
+    position: relative;
+    left: -6rem;
+}
+
+@media (max-width: 600px) {
+    .X2 {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .X3 h3 {
+        font-size: 1.3em;
+    }
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}

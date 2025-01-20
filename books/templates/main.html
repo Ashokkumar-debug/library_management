@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library System</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <style>
+        .icon-left {
+            position: fixed;
+            top: 14%;
+            left: 75rem;
+            display: flex;
+            gap: 20px;
+        }
+
+        .icon-left .icon {
+            font-size: 40px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .icon-left .icon:hover {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="icon-left">
+        <a href="/top_members_report/" class="card-link">
+            <div class="icon">
+                <i class='bx bxs-user'></i>
+            </div>
+        </a>
+
+        <a href="/genre-chart/" class="card-link">
+            <div class="icon">
+                <i class='bx bxs-bar-chart-alt-2'></i>
+            </div>
+        </a>
+    </div>
+
+    <div class="container mt-5">
+        <h1>Kyra Books</h1>       
+        <div class="card-container">
+            <a href="/books/" class="card card-books">
+                <img src="{% static 'images/book.jpeg' %}" alt="Books">
+                <p>BOOK</p>
+            </a>
+            <a href="/members/" class="card card-members">
+                <img src="{% static 'images/member.jpeg' %}" alt="Members">
+                <p>MEMBER</p>
+            </a>
+            <a href="/transactions/" class="card card-transactions">
+                <img src="{% static 'images/moneyy.jpeg' %}" alt="Transactions">
+                <p>TRANSACTIONS</p>
+            </a>
+            <a href="/staff/" class="card card-staff">
+                <img src="{% static 'images/staff.jpeg' %}" alt="Staff">
+                <p>STAFF</p>
+            </a>
+            <div class="U1">
+                <div class="U2">
+                    <div class="U3">
+                       <h2>{{ total_available_copies }}</h2>
+                       <br><h3>Total Books </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="V1">
+                <div class="V2">
+                    <div class="V3">
+                       <h2>{{ total_members }}</h2>
+                       <br><h3>Members </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="W1">
+                <div class="W2">
+                    <div class="W3">
+                       <h2>${{total_fine_amount }}</h2>
+                       <br><h3>Fine Amount</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="X1">
+                <a href="/report/" class="card-link">
+                <div class="X2">
+                    <div class="X3">
+                       <h2>{{ overdue_member_count }}</h2>
+                       <br><h3>Report </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

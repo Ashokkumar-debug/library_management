@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff List</title>
+
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/ananda-black');
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            padding: 20px;
+        }
+
+        .container {
+            position: relative;
+            top:5rem;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+            font-family: 'montserrat', sans-serif;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            color: #555;
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'montserrat', sans-serif;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        thead {
+            background-color: #ff1e00;
+            color: white;
+            font-family: 'montserrat', sans-serif;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: 'montserrat', sans-serif;
+        }
+
+        td {
+            font-size: 0.9rem;
+            font-family: 'montserrat', sans-serif;
+            font-weight: 500;
+        }
+
+        .add-staff-btn {
+            font-family: 'montserrat', sans-serif;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ff1e00;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-staff-btn:hover {
+            background-color: #ac1400;
+        }
+
+        input[type="text"], input[type="number"], select {
+            text-align: center;
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 768px) {
+            table {
+                font-size: 0.85rem;
+            }
+
+            button {
+                font-size: 0.8rem;
+            }
+
+            .add-staff-btn {
+                font-size: 0.9rem;
+                padding: 8px 16px;
+            }
+
+            input[type="text"], input[type="number"], select {
+                font-size: 0.85rem;
+            }
+        }
+
+        h1 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            font-family: 'Ananda Black', sans-serif;
+            font-size: 2rem;
+            margin: 0;
+            padding: 1rem 2rem;
+            z-index: 1000;
+        }
+        .container {
+            position: relative;
+            top:5rem;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <a href="/main">
+        <h1>Kyra Books</h1>
+    </a>
+
+    <div class="container">
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Phone Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for staff in staff_members %}
+                <tr>
+                    <td>{{staff.id}}</td>
+                    <td>{{ staff.name }}</td>
+                    <td>{{ staff.email }}</td>
+                    <td>{{ staff.get_role_display }}</td>
+                    <td>{{ staff.phone_number }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'add_staff' %}" class="add-staff-btn">Add Staff</a>
+</div>
+</body>
+</html>
